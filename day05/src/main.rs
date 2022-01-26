@@ -1,11 +1,8 @@
-use std::collections::HashMap;
 use nom::{
-    bytes::complete::tag,
-    character::complete::i32,
-    character::complete::newline,
-    multi::separated_list1,
-    IResult,
+    bytes::complete::tag, character::complete::i32, character::complete::newline,
+    multi::separated_list1, IResult,
 };
+use std::collections::HashMap;
 
 type Point = (i32, i32);
 type Line = (Point, Point);
@@ -72,6 +69,12 @@ fn count_overlaps_diag(input: &str) -> usize {
 }
 
 fn main() {
-    println!("Count overlaps: {}", count_overlaps(include_str!("input.txt")));
-    println!("Count overlaps diag: {}", count_overlaps_diag(include_str!("input.txt")));
+    println!(
+        "Count overlaps: {}",
+        count_overlaps(include_str!("input.txt"))
+    );
+    println!(
+        "Count overlaps diag: {}",
+        count_overlaps_diag(include_str!("input.txt"))
+    );
 }
